@@ -1,0 +1,2 @@
+# AI-AnyWhere-BrowserPlugin
+#OnlyOneSubscriptionForAI
