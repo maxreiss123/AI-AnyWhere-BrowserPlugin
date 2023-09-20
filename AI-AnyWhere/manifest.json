@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "AIPlugin",
+    "version": "1.0",
+    "permissions": ["activeTab"],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }
+  }
+  
