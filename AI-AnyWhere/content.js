@@ -1,21 +1,31 @@
-let isMenuBeingShown = false;  
+let icon_menu_presenting = false;
 
-document.addEventListener("mousedown", function(event) {
+document.addEventListener("mouseup", function(event) {
   const selectedText = getSelectedText();
   if (selectedText) {
     console.log(`Selected Text: ${selectedText}`);
     const rect = getSelectionRect();
     if (rect) {
-
-      const iconWidth = 20; 
-      showIcon(rect.right - iconWidth, rect.bottom);
+      showIcon(rect.right, rect.bottom);
     }
   } else {
     removeIcon();
-    removeMenu();
+    removeMenu();  
   }
 });
 
+function getSelectedText() {
+  if (window.getSelection) {
+    return window.getSelection().toString();
+  }
+  return '';
+}
+
+function getSelectionRect() {
+  const selection = window.getSelection();
+  if (!selection.rangeCount) return null;
+  return selection.getRangeAt(0).getBoundingClientRect();
+}
 function showIcon(x, y) {
   removeIcon();
   removeMenu();
