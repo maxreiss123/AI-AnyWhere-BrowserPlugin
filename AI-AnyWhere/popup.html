@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>AIPlugin</title>
-</head>
-<body>
-  <button id="summarize">Summarize</button>
-  <button id="translate">Translate</button>
-  <input type="text" id="apiKeyInput" placeholder="Enter OpenAI API Key">
-  <input type="text" id="userQuery" placeholder="Enter your query here">
-  <button id="queryButton">Ask</button>
-  <div id="queryResponse"></div>
-  <button id="setApiKey">Set API Key</button>
-  <!-- Add more buttons here -->
-  <script src="popup.js"></script>
-</body>
-</html>
+<link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="module" src="popup.js"></script>
+
+<div class="container">
+  <div>
+    <div class="title">Your bookmarks for this video</div>
+
+    <div class="bookmarks" id="bookmarks"></div>
+  </div>
+</div>

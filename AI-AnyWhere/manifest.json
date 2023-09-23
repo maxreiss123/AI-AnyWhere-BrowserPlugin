@@ -1,14 +1,36 @@
 {
-    "manifest_version": 3,
-    "name": "AIPlugin",
-    "version": "1.0",
-    "permissions": ["activeTab"],
-    "browser_action": {
-      "default_popup": "popup.html"
-    },
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+  "name": "Test-Reader",
+  "version": "0.1.0",
+  "description": "Use one token only instead of 1000 subscriptions",
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
     }
-  }
-  
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png",
+        "assets/save.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "anyWhereAI",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
